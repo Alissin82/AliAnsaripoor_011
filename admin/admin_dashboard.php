@@ -4,7 +4,7 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title> <?php include_once("asset/php/title.php"); title(); ?> </title>
+      <title> <?php include_once("asset\php\title.php"); title(); + " - پنل ادمین" ?> </title>
       
       <!-- Font Awesome -->
       <script src="https://kit.fontawesome.com/06ea7b8ed9.js" crossorigin="anonymous"></script>
