@@ -1,19 +1,19 @@
-<nav class="navbar navbar-expand-sm bg-primary text-bg-primary navbar-dark">
+<nav class="navbar navbar-expand-sm bg-secondary text-bg-secondary navbar-dark sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand sahelblack" href="dashboard.php"><?php include_once("head.php"); title(); ?></a>
+        <a class="navbar-brand sahelblack" href="dashboard.php">پنل مدیریت</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#section1">دانشجو</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#section2">Link</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#section3">Link</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>

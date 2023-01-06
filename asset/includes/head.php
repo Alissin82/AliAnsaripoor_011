@@ -16,6 +16,9 @@ function title($txt=""){
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-metro.css">
+
 <link rel="shortcut icon" type="image/jpg" href="../asset/img/school_logo.ico"/>
 <link rel="stylesheet" href="../asset/css/style.css" type="text/css">
 

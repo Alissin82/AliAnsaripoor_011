@@ -4,18 +4,28 @@ body{
 
 @font-face {
     font-family: iransans; 
-    src: url("../asset/fontiransansweb.ttf");
+    src: url("../font/iransansweb2.ttf");
 }
 
 @font-face {
     font-family: sahel_black;
-    src: url('../asset/font/Sahel-Black.ttf');
+    src: url('../font/SahelBlack.ttf');
 }
 
 *{
     font-family: iransans;
 }
 
-.sahel-black{
+.sahelblack{
     font-family: sahel_black !important;
 }
+
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    color: black;
+    text-shadow: black 0.05em 0.05em 0.2em;
+}
+
