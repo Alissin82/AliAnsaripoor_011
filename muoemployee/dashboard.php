@@ -2,12 +2,12 @@
 <html lang="fa" dir="rtl">
 
 <head>
-   <?php include_once("../asset/includes/head.php"); ?>
+   <?php include_once("..\asset\includes\head.php"); ?>
    <title><?php title(" - پنل مدیریت"); ?></title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="20">
-   <?php include_once("../asset/includes/header.php"); ?>
+   <?php include_once("..\asset\includes\header.php"); ?>
    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark sticky-top">
       <div class="container-fluid">
          <a class="navbar-brand" href="dashboard.php">پنل مدیریت</a>

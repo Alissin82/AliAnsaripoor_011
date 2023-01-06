@@ -2,14 +2,14 @@
 <html lang="fa" dir="rtl">
 
    <head>
-      <?php include_once("asset/includes/head.php"); ?>
+      <?php include_once("../asset/includes/head.php"); ?>
       <title><?php title(); ?></title>
    </head>
 
    <body class="d-flex justify-content-center align-items-center">
       <div class="card col-10 col-md-4">
          <div class="card-header text-center">
-            <img src="asset\img\school_logo.png" alt="school_logo" width="200px">
+            <img src="..\asset\img\school_logo.png" alt="school_logo" width="200px">
          </div>
          <div class="card-body">
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -39,7 +39,7 @@
          <?php
 
             if ($_SERVER['REQUEST_METHOD']=="POST") {
-               include_once("asset/php/server.php");
+               include_once("../asset/php/server.php");
                $username = $_POST['username'];
                $password = $_POST['password'];
                try {
@@ -67,11 +67,11 @@
                   //redirect to appropriate dashboard
                   switch ($access_level) {
                      case 5:case 4:case 3:case 2:case 1:
-                        header("Location: admin/dashboard.php");
+                        header("Location: ../muoemployee/dashboard.php");
                      break;
 
                      case 0:
-                        header("Location: student/dashboard.php");
+                        header("Location: dashboard.php");
                      break;
                   }
 

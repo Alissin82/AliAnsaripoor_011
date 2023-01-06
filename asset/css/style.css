@@ -4,16 +4,16 @@ body{
 
 @font-face {
     font-family: iransans; 
-    src: url("asset/fontiransansweb.ttf");
+    src: url("../asset/fontiransansweb.ttf");
 }
 
 @font-face {
     font-family: sahel_black;
-    src: url('../font/Sahel-Black.ttf');
+    src: url('../asset/font/Sahel-Black.ttf');
 }
 
 *{
-    font-family: iransans !important;
+    font-family: iransans;
 }
 
 .sahel-black{
