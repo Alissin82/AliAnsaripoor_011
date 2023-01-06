@@ -1,0 +1,21 @@
+body{
+    height: 100vh !important;
+}
+
+@font-face {
+    font-family: iransans; 
+    src: url("asset/fontiransansweb.ttf");
+}
+
+@font-face {
+    font-family: sahel_black;
+    src: url('../font/Sahel-Black.ttf');
+}
+
+*{
+    font-family: iransans !important;
+}
+
+.sahel-black{
+    font-family: sahel_black !important;
+}
