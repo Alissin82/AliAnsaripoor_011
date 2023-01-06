@@ -33,7 +33,6 @@
             <h4 class="col-12">
                <span>
                   <span class="fas fa-users"></span>
-                  
                   <?php echo $count_student; ?>
                   نفر دانشجو
                </span>
@@ -41,7 +40,7 @@
          </div>
          <div class="w3-panel col text-center p-5">
             <h4 class="col-12">
-               <a href="">
+               <a href="studentregister.php">
                   <span class="fas fa-user-plus"></span>
                   ثبت نام
                </a>
