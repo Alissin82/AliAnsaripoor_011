@@ -2,7 +2,14 @@
 $project_title;
 function title($txt=""){
     $project_title = "مهاجرآنلاین";
-    echo $project_title . $txt;}
+    $txt = trim($txt);
+    if ($txt != "") {
+        echo $txt . " - " . $project_title;
+    }
+    else{
+        echo $project_title;
+    }
+    }
 ?>
 
 <meta charset="utf-8">

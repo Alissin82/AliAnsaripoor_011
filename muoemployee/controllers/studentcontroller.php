@@ -1,7 +1,5 @@
 <?php
 
-include_once("controllers\studentcontroller.php");
-
 function get_student_count(){
     try {
         /*//get user data from database

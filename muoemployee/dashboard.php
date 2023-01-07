@@ -3,7 +3,7 @@
 
 <head>
    <?php include_once("..\asset\includes\head.php"); ?>
-   <title><?php title(" - پنل مدیریت"); ?></title>
+   <title><?php title("پنل مدیریت"); ?></title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="20">

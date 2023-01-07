@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#section1">دانشجو</a>
+                    <a class="nav-link" href="dashboard.php#section1">دانشجو</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#section2">Link</a>
