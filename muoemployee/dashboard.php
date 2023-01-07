@@ -11,7 +11,7 @@
    <?php include_once("header.php"); ?>
    
 
-   <?php include_once("..\asset\php\server.php"); ?>
+   <?php include_once("server.php"); ?>
 
    <section id="section1" class="container-fluid bg-success text-white p-3 px-0">
       <h3 class="px-4 sahelblack">دانشجو</h3>

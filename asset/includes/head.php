@@ -10,6 +10,7 @@ function title($txt=""){
         echo $project_title;
     }
     }
+
 ?>
 
 <meta charset="utf-8">

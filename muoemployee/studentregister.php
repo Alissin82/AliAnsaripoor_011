@@ -10,16 +10,24 @@
     <?php include_once("../asset/includes/header.php"); ?>
     <?php include_once("header.php"); ?>
 
-    <?php include_once("../asset/php/server.php"); ?>
+    <?php include_once("server.php"); ?>
 
     <div class="container-fluid p-4">
-        <!--<form action="controllers/uploadfilecontroller.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="ارسال">
-        </form>-->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+        <form action="controllers/studentcontroller.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md ">
+
+                    <?php
+                        if (isset($_SESSION['error']) or isset($_SESSION['success'])) {
+                            if ($_SESSION['success'][0]=="student_register") {
+                                echo"<p class='alert alert-success'><strong>success</strong> اطلاعات دانشجو با موفقیت ثبت شد</p>";
+                            }
+                            elseif($_SESSION['error'][0]=="student_register"){
+                                echo $_SESSION['error'][1];
+                            }
+                            session_unset();
+                        }
+                    ?>
 
                     <div class="form-group row mb-3">
                         <label for="codemelli"> کد ملی : </label>
@@ -40,11 +48,11 @@
                     <div class="form-group row mb-3">
                         <div class="form-group col">
                             <label for="mnumber"> شماره همراه : </label>
-                            <input name="mnumber" type="text" class="form-control" placeholder="شماره همراه" pattern="09(1[0-9]|3[1-9]|2[1-9])-?[0-9]{3}-?[0-9]{4}">
+                            <input name="mnumber" type="text" class="form-control" placeholder="شماره همراه">
                         </div>
                         <div class="form-group col">
                             <label for="hnumber"> شماره خانه : </label>
-                            <input name="hnumber" type="text" class="form-control" placeholder="شماره خانه" pattern="^0[0-9]{2,}[0-9]{7,}$">
+                            <input name="hnumber" type="text" class="form-control" placeholder="شماره خانه">
                         </div>
                     </div>
 
@@ -63,7 +71,7 @@
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="">استان : </label>
-                                <select class="form-control" name="pprovince" onChange="iranwebsv(this.value);">
+                                <select class="form-control" name="province" onChange="iranwebsv(this.value);">
                                     <option value="وارد نشده" id="">لطفا استان را انتخاب نمایید</option>
                                     <option value="تهران" id="">تهران</option>
                                     <option value="گیلان" id="">گیلان</option>
@@ -111,16 +119,16 @@
                     <div class="form-group mb-3">
                         <label for="">تاریخ تولد : </label>
                         <?php
-                            include_once('../asset/php/date.php');
+                            include_once('php/date.php');
                             $date = gregorian_to_jalali(date('Y'), date('m'), date('d'), $mod='');
                         ?>
                         <div class="row">
                             <input class="form-control col m-1" type="number" name="bd_day"
-                                placeholder="روز" min="1" max="31" value="<?php echo $date[2]+1;?>">
+                                placeholder="روز" min="1" max="31" value="<?php echo $date[2];?>">
                             <input class="form-control col m-1" type="number" name="bd_month"
                                 placeholder="ماه" min="1" max="12" value="<?php echo $date[1];?>">
                             <input class="form-control col m-1" type="number" name="bd_year"
-                                placeholder="سال" max="<?php echo $date[0];?>" value="<?php echo $date[0];?>">
+                                placeholder="سال" max="<?php echo $date[0]-18;?>" value="<?php echo $date[0]-18;?>">
                         </div>
                     </div>
                 </div>

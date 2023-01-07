@@ -1,15 +1,15 @@
 <?php
 
-function upload_file($file,$dest){
+function upload_file($file,$dest,$name){
 
   //set file name
-  $filename = rand(100000,1000000);
+  $filename = $name[0]."_".$name[1]."_".$name[2];
 
   //get file extension
   $imageFileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
 
   //get the file location from temp to upload
-  $tempname = $_FILES["choosefile"]["tmp_name"];  
+  $tempname = $_FILES["image"]["tmp_name"];  
 
   //set destination location
   $folder = null;
@@ -27,7 +27,7 @@ function upload_file($file,$dest){
   if (move_uploaded_file($tempname, $folder)) {
     return $folder;
   }else{
-    return false;
+    die("<p class='alert alert-danger'><strong>اخطار</strong> آپلود عکس به خطا برخورد</p>");
   }
 }
 
