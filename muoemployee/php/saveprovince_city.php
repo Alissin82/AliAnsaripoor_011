@@ -11,7 +11,6 @@
         $city_name_str = "";
         $city_code_str = "";
 
-        
         //پویش کل فایل
         while (!feof($myfile)) {
             

@@ -47,14 +47,14 @@ if (isset($_POST['codemelli'])) {
    $haddress= $_POST['address'];
 
    try {
-   /*$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   
-   // use exec() because no results are returned
-   $conn->exec($sql);*/
-
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      
    $sql = "INSERT INTO student(codemelli, fname, lname, mnumber, hnumber, email, img, province, city, birthdate, haddress)
    VALUES ($codemelli, $fname, $lname, $mnumber, $hnumber, $email, $img, $province, $city, $birthdate, $haddress, )";
 
+   // use exec() because no results are returned
+   $conn->exec($sql);
+   /*
    $result = mysqli_query($conn,$sql);
 
    if ($result) {
@@ -62,7 +62,7 @@ if (isset($_POST['codemelli'])) {
    }
    else {
      echo "<p class='alert alert-danger alert-dismissible fade show'><strong>اخطار</strong> ثبت اطلاعات بیمار به مشکل برخورد <button type='button' class='close' data-dismiss='alert'>&times;</button></p>";
-   }
+   }*/
 
    $_SESSION['success'] = array("student_register"); 
    header("Location : ../studentregister.php");
