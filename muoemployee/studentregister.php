@@ -10,7 +10,7 @@
     <?php include_once("../asset/includes/header.php"); ?>
     <?php include_once("header.php"); ?>
 
-    <?php include_once("server.php"); ?>
+    <?php include_once("../asset/php/server.php"); ?>
 
     <div class="container-fluid p-4">
         <form action="controllers/studentcontroller.php" method="post" enctype="multipart/form-data">
@@ -18,14 +18,25 @@
                 <div class="col-md ">
 
                     <?php
-                        if (isset($_SESSION['error']) or isset($_SESSION['success'])) {
-                            if ($_SESSION['success'][0]=="student_register") {
-                                echo"<p class='alert alert-success'><strong>success</strong> اطلاعات دانشجو با موفقیت ثبت شد</p>";
+                        if (isset($_GET['result'])) {
+                            if ($_GET['result'] == "success") {
+                                echo'
+                                    <div class="alert alert-success alert-dismissible">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong>موفقیت</strong> اطلاعات دانشجو با موفقیت ثبت شد
+                                    </div>
+                                ';
+
                             }
-                            elseif($_SESSION['error'][0]=="student_register"){
-                                echo $_SESSION['error'][1];
+                            else
+                            {
+                                echo'
+                                    <div class="alert alert-danger alert-dismissible">
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                    <strong>اخطار</strong> ثبت اطلاعات به خطا برخورد"
+                                    </div>
+                                ';
                             }
-                            session_unset();
                         }
                     ?>
 
@@ -148,6 +159,6 @@
     </div>
 </body>
 
-<script src="../asset/js/city.js"></script>
+<script src="js/city.js"></script>
 
 </html>

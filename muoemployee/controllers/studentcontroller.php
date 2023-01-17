@@ -22,7 +22,7 @@ function get_student_count(){
 
 if (isset($_POST['codemelli'])) {
 
-   include("..\server.php");
+   include("../../asset/php/server.php");
    $conn = Connect();
 
    include("uploadfilecontroller.php");
@@ -34,7 +34,7 @@ if (isset($_POST['codemelli'])) {
    $hnumber = $_POST['hnumber'];
    $email = $_POST['email'];
 
-   $img = upload_file($_FILES["image"]["name"],"student_image",array($codemelli,$fname,$lname));
+   $img = upload_file($_FILES["image"]["name"],"student_image",array($codemelli,$mnumber,$hnumber));
 
    $province = $_POST['province'];
    
@@ -47,30 +47,17 @@ if (isset($_POST['codemelli'])) {
    $haddress= $_POST['address'];
 
    try {
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       
    $sql = "INSERT INTO student(codemelli, fname, lname, mnumber, hnumber, email, img, province, city, birthdate, haddress)
-   VALUES ($codemelli, $fname, $lname, $mnumber, $hnumber, $email, $img, $province, $city, $birthdate, $haddress, )";
+   VALUES ('$codemelli', '$fname', '$lname', '$mnumber', '$hnumber', '$email', '$img', '$province', '$city', '$birthdate', '$haddress')";
 
    // use exec() because no results are returned
    $conn->exec($sql);
-   /*
-   $result = mysqli_query($conn,$sql);
 
-   if ($result) {
-     echo "<p class='alert alert-success alert-dismissible fade show'><strong>پیام سیستم</strong> اطلاعات بیمار با موفقیت ثبت شد <button type='button' class='close' data-dismiss='alert'>&times;</button></p>";
-   }
-   else {
-     echo "<p class='alert alert-danger alert-dismissible fade show'><strong>اخطار</strong> ثبت اطلاعات بیمار به مشکل برخورد <button type='button' class='close' data-dismiss='alert'>&times;</button></p>";
-   }*/
+   echo"<script>window.location.href = '../studentregister.php?result=success'</script>;";
 
-   $_SESSION['success'] = array("student_register"); 
-   header("Location : ../studentregister.php");
-
-} catch(PDOException $e) {
-   $error = "<p class='alert alert-danger'><strong>اخطار</strong> ثبت اطلاعات به خطا برخورد".$e->getMessage()."</p>";
-   $_SESSION['error'] = array("student_register",$error); 
-   header("Location : ../studentregister.php"); 
+   } catch(PDOException $e) {
+      echo"<script>window.location.href = '../studentregister.php?result=error'</script>;";
    }
    $conn = null;
 }

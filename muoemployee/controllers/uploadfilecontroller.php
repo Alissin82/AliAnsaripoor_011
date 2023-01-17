@@ -3,7 +3,7 @@
 function upload_file($file,$dest,$name){
 
   //set file name
-  $filename = $name[0]."_".$name[1]."_".$name[2];
+  $filename = $name[0].$name[1].$name[2];
 
   //get file extension
   $imageFileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
