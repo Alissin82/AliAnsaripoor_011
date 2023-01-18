@@ -23,7 +23,7 @@
       <div class="w3-container px-0 row">
          <div class="w3-panel col text-center p-5">
             <h4 class="col-12">
-               <a href="">
+               <a href="studentlist.php">
                   <span class="fas fa-th-list"></span>
                   مشاهده لیست
                </a>
