@@ -3,16 +3,15 @@
 
 function get_student_count(){
     try {
-        /*//get user data from database
+        //get user data from database
         $conn = Connect();
-        $stmt = $conn->prepare("SELECT count(*) FROM employee");
+        $stmt = $conn->prepare("SELECT count(*) FROM student");
         $stmt->execute();
         $result = $stmt->fetchColumn();
            
         //exit the connection
-        $conn = null;*/
+        $conn = null;
 
-        $result = rand(10,100);
      }
      catch(PDOException $e) {
         echo "Error: " . $e->getMessage();

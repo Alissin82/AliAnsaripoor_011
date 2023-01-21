@@ -1,55 +1,49 @@
 <?php
 
+
+//Database connection.
+$con = MySQLi_connect(
+    "localhost", //Server host name.
+    "root", //Database username.
+    "", //Database password.
+    "dbmohajerproject" //Database name or anything you would like to call it.
+);
+
+$con->set_charset('utf8');
+
+//Check connection
+if (MySQLi_connect_errno()) {
+    echo "Failed to connect to MySQL: " . MySQLi_connect_error();
+}
+
+
+//Getting value of "search" variable from "script.js".
+if (isset($_POST['search'])) {
+    //Search box value assigning to $Name variable.
+    $search = $_POST['search'];
+
+    //Search query.
+    $sql = "SELECT codemelli,fname,lname FROM student 
+    WHERE codemelli LIKE '%$search%' OR fname LIKE '%$search%' OR lname LIKE '%$search%'";
+
+    $ExecQuery = MySQLi_query($con, $Query);
+
     echo "<table>";
     echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th></tr>";
 
-    //Including Database configuration file.
-        include("../../asset/php/server.php");
-
-    //Database connection.
-        $conn = connect();
-    
-    class TableRows extends RecursiveIteratorIterator {
-        function __construct($it) {
-            parent::__construct($it, self::LEAVES_ONLY);
-        }
-        function current() {
-            return "<td>" . parent::current(). "</td>";
-        }
-        function beginChildren() {
-            echo "<tr onclick='fill(' ". $GLOBALS['result']['fname'] . " ')' >";
-        }
-        function endChildren() {
-            echo "</tr>" . "\n";
-        }   
-    }
-
-
-    try {
-        //Getting value of "search" variable from "script.js".
-        if (isset($_POST['search'])) {
-            //Search box value assigning to $Name variable.
-            $search = $_POST['search'];
-
-            //Search query.
-            $sql = "SELECT codemelli,fname,lname FROM student 
-            WHERE codemelli LIKE '%$search%' OR fname LIKE '%$search%' OR lname LIKE '%$search%'";
-
-            $stmt = $conn->prepare($sql);
-            $stmt->execute();
-
-            // set the resulting array to associative
-            $GLOBALS['result'] = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-                echo $v;
-            }
-        }
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
-    }
-    $conn = null;
-    echo "</table>";
-
-    
-
+    while ($Result = MySQLi_fetch_array($ExecQuery)) {
 ?>
+
+
+<!-- Creating unordered list items.
+Calling javascript function named as "fill" found in "script.js" file.
+By passing fetched result as parameter. -->
+<tr>
+    <td onclick="fill('<?php echo $Result['fname']; ?>')"><?php echo $Result['fname']; ?></td>
+</tr>
+
+<!-- Below php code is just for closing parenthesis. Don't be confused. -->
+    <?php
+        }}
+        echo'</table>';
+    ?>

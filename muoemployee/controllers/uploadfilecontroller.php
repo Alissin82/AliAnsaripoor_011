@@ -25,7 +25,7 @@ function upload_file($file,$dest,$name){
 
   //upload and return result
   if (move_uploaded_file($tempname, $folder)) {
-    return $folder;
+    return $filename;
   }else{
     die("<p class='alert alert-danger'><strong>اخطار</strong> آپلود عکس به خطا برخورد</p>");
   }

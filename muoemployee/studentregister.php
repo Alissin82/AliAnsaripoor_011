@@ -16,7 +16,6 @@
         <form action="controllers/studentcontroller.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md ">
-
                     <?php
                         if (isset($_GET['result'])) {
                             if ($_GET['result'] == "success") {
@@ -26,7 +25,6 @@
                                     <strong>موفقیت</strong> اطلاعات دانشجو با موفقیت ثبت شد
                                     </div>
                                 ';
-
                             }
                             else
                             {
@@ -39,12 +37,10 @@
                             }
                         }
                     ?>
-
                     <div class="form-group row mb-3">
                         <label for="codemelli"> کد ملی : </label>
                         <input name="codemelli" type="text" class="form-control" placeholder="کد ملی">
                     </div>
-
                     <div class="form-group row mb-3">
                         <div class="form-group col">
                             <label for="fname"> نام : </label>
@@ -55,7 +51,6 @@
                             <input name="lname" type="text" class="form-control" placeholder="نام خانوادگی">
                         </div>
                     </div>
-
                     <div class="form-group row mb-3">
                         <div class="form-group col">
                             <label for="mnumber"> شماره همراه : </label>
@@ -66,7 +61,6 @@
                             <input name="hnumber" type="text" class="form-control" placeholder="شماره خانه">
                         </div>
                     </div>
-
                     <div class="form-group row mb-3">
                         <div class="form-group col">
                             <label for="email"> ایمیل : </label>
@@ -77,7 +71,6 @@
                             <input name="image" type="file" class="form-control">
                         </div>
                     </div>
-
                     <div class="form-group mb-3">
                         <div class="row">
                             <div class="form-group col-6">
@@ -126,7 +119,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group mb-3">
                         <label for="">تاریخ تولد : </label>
                         <?php
@@ -143,7 +135,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md">
                     <div class="form-group mb-3">
                         <label for="">آدرس : </label>
