@@ -21,8 +21,9 @@
                             if ($_GET['result'] == "success") {
                                 echo'
                                     <div class="alert alert-success alert-dismissible">
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                                    <strong>موفقیت</strong> اطلاعات دانشجو با موفقیت ثبت شد
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                        <strong>موفقیت</strong> اطلاعات دانشجو با موفقیت ثبت شد
+                                        <a href="studentlist.php" class="alert-link">مشاهده دانشجویان</a>
                                     </div>
                                 ';
                             }

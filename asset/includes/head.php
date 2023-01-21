@@ -1,7 +1,7 @@
 <?php 
 $project_title;
 function title($txt=""){
-    $project_title = "ali ansaripoor";
+    $project_title = "مهاجر آنلاین";
     $txt = trim($txt);
     if ($txt != "") {
         echo $txt . " - " . $project_title;

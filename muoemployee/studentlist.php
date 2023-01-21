@@ -28,8 +28,7 @@
   </div>
 
   <!-- Suggestions will be displayed in below div. -->
-  <div class="container-fluid p-2" id="display">
-    
+  <div class="container-fluid p-2" id='display'>
   </div>
 
 </body>

@@ -26,12 +26,13 @@ if (isset($_POST['codemelli'])) {
 
    include("uploadfilecontroller.php");
 
-   $codemelli = $_POST['codemelli'];
-   $fname = $_POST['fname'];
-   $lname = $_POST['lname']; 
-   $mnumber = $_POST['mnumber'];
-   $hnumber = $_POST['hnumber'];
-   $email = $_POST['email'];
+   $rand = rand(10,99);
+   $codemelli = trim($_POST['codemelli']);
+   $fname = trim($_POST['fname']);
+   $lname = trim($_POST['lname']);
+   $mnumber = trim($_POST['mnumber']);
+   $hnumber = trim($_POST['hnumber']);
+   $email = trim($_POST['email']);
 
    $img = upload_file($_FILES["image"]["name"],"student_image",array($codemelli,$mnumber,$hnumber));
 
@@ -43,7 +44,7 @@ if (isset($_POST['codemelli'])) {
    $city = saveprovince_city($city);
 
    $birthdate = $_POST['bd_year']."/".$_POST['bd_month']."/".$_POST['bd_day'];
-   $haddress= $_POST['address'];
+   $haddress= trim($_POST['address']);;
 
    try {
       
