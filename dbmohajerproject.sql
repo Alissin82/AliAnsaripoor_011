@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.6.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2023 at 07:53 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.25
+-- Generation Time: Jan 22, 2023 at 08:45 AM
+-- Server version: 5.7.14
+-- PHP Version: 7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -79,6 +78,16 @@ CREATE TABLE `student` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_persian_ci;
 
 --
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`rowid`, `codemelli`, `fname`, `lname`, `mnumber`, `hnumber`, `email`, `img`, `province`, `city`, `birthdate`, `haddress`) VALUES
+(1, '1190331608', 'علی', 'انصاریپور', '09908699859', '03153220359', 'farahonarjoo@gmail.com', '11903316080990869985903153220359.jpg', 'تهران', 'پرديس', '1383/10/28', 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.'),
+(2, '1190332255', 'علیرضا', 'انصاری', '09908568495', '03153359220', 'aliansaipoor@gmail.com', '11903322550990856849503153359220.jpg', 'اصفهان', 'شهرضا', '1383/10/30', 'لورم ایپسوم'),
+(3, '1191608033', 'رضا', 'انصاری پور', '', '03153123456', 'matinbeigiwp@gmail.com', '119160803303153123456.jpg', 'وارد نشده', '', '1383/10/30', 'lorem ipsum'),
+(4, '1112223333', 'مهدی', 'زاهدی', '09938644444', '09938644444', 'test@gmail.com', '11122233330993864444409938644444.jpg', 'اصفهان', 'اصغرآباد', '1381/11/24', 'lorem ipsum');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -109,20 +118,16 @@ ALTER TABLE `student`
 --
 ALTER TABLE `employee`
   MODIFY `rowid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
 --
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `rowid` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
+  MODIFY `rowid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
